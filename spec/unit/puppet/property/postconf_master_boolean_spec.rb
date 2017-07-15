@@ -5,6 +5,7 @@ require 'puppet/type/postconf_master'
 
 describe Puppet::Property::PostconfMasterBoolean do
   subject { described_class.new(resource: resource) }
+
   let(:resource) { mock('resource') }
 
   describe '.unmunge' do

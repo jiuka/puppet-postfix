@@ -76,7 +76,7 @@ describe Puppet::Type.type(:postconf).provider(:postconf) do
     end
 
     context 'array parameter' do
-      let(:param_value) { %w(foo bar) }
+      let(:param_value) { %w[foo bar] }
 
       it 'prefetches a array value' do
         described_class.prefetch(param_name => resource)
@@ -103,7 +103,7 @@ describe Puppet::Type.type(:postconf).provider(:postconf) do
     let(:params) do
       {
         title:    'myhostname',
-        value:    %w(foo bar),
+        value:    %w[foo bar],
         provider: described_class.name
       }
     end

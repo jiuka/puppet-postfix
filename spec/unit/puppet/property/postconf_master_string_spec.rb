@@ -5,6 +5,7 @@ require 'puppet/type/postconf_master'
 
 describe Puppet::Property::PostconfMasterString do
   subject { described_class.new(resource: resource) }
+
   let(:resource) { mock('resource') }
 
   describe '.unmunge' do
@@ -20,7 +21,7 @@ describe Puppet::Property::PostconfMasterString do
   describe '.property_matches?' do
     [
       ['-', :undef],
-      %w(foo foo)
+      %w[foo foo]
     ].each do |current, desired|
       it "matches #{current} to #{desired.inspect}" do
         expect(subject.property_matches?(current, desired)).to eq(true)

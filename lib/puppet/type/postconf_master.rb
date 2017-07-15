@@ -117,13 +117,13 @@ Puppet::Type.newtype(:postconf_master) do
                      self[:service])
       end
     else
-      raise ArgumentError, format("Invalid type %s", self[:type])
+      raise ArgumentError, format('Invalid type %s', self[:type])
     end
   end
 
   def self.title_patterns
     [
-      [%r{^(.+)/([a-z]+)$}, [[:service], [:type]]],
+      [%r{^(.+)/([a-z]+)$}, [[:service], [:type]]]
     ]
   end
 

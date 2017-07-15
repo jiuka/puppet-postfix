@@ -72,6 +72,7 @@ describe Puppet::Type.type(:postmulti) do
 
   describe '.retrive' do
     subject { described_class.new(name: name) }
+
     let(:provider) { mock 'provider' }
 
     it 'returns the ensure value from the provider' do
@@ -90,6 +91,7 @@ describe Puppet::Type.type(:postmulti) do
 
   describe '.create' do
     subject { described_class.new(name: name) }
+
     let(:provider) { mock 'provider' }
 
     it 'creates the resource' do
@@ -102,6 +104,7 @@ describe Puppet::Type.type(:postmulti) do
 
   describe '.activate' do
     subject { described_class.new(name: name) }
+
     let(:provider) { mock 'provider' }
 
     it 'activates the resource' do
@@ -115,6 +118,7 @@ describe Puppet::Type.type(:postmulti) do
 
   describe '.deactivate' do
     subject { described_class.new(name: name) }
+
     let(:provider) { mock 'provider' }
 
     it 'deactivated the resource' do

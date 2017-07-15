@@ -40,7 +40,7 @@ describe Puppet::Type.type(:postconf) do
     end
 
     describe 'insane looking parameter' do
-      %w(2bounce_notice_recipient myhostname virtual_transport smtp_tls_CApath).each do |value|
+      %w[2bounce_notice_recipient myhostname virtual_transport smtp_tls_CApath].each do |value|
         it 'accepts sane looking parameter names' do
           expect do
             described_class.new(name: value,
@@ -51,7 +51,7 @@ describe Puppet::Type.type(:postconf) do
     end
 
     describe 'insane looking parameter' do
-      %w(2bounce__recipient 2bounce_notice_ _notice_recipient).each do |value|
+      %w[2bounce__recipient 2bounce_notice_ _notice_recipient].each do |value|
         it "should reject #{value} as value to parameter" do
           expect do
             described_class.new(name: value,
@@ -77,7 +77,7 @@ describe Puppet::Type.type(:postconf) do
     it 'accepts a array of strings' do
       expect do
         described_class.new(name:  pc_parameter,
-                            value: %w(string foo bar))
+                            value: %w[string foo bar])
       end.not_to raise_error
     end
 
@@ -126,7 +126,7 @@ describe Puppet::Type.type(:postconf) do
       end
 
       it 'resurns a string array as comma joined string' do
-        expect(subject.should_to_s(%w(foo bar))).to eq('foo, bar')
+        expect(subject.should_to_s(%w[foo bar])).to eq('foo, bar')
       end
     end
 
@@ -142,7 +142,7 @@ describe Puppet::Type.type(:postconf) do
       end
 
       it 'resurns a string array as comma joined string' do
-        expect(subject.is_to_s(%w(foo bar))).to eq('foo, bar')
+        expect(subject.is_to_s(%w[foo bar])).to eq('foo, bar')
       end
     end
   end
