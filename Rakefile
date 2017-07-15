@@ -33,7 +33,8 @@ end
 
 desc 'Run metadata_lint, lint, validate, and spec tests.'
 task :test do
-  [:metadata_lint, :lint, :validate, :spec].each do |test|
+  Rake::Task[:metadata_lint].invoke if RUBY_VERSION >= '2.1.0'
+  [:lint, :validate, :spec].each do |test|
     Rake::Task[test].invoke
   end
 end
