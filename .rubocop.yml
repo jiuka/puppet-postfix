@@ -134,7 +134,7 @@ Layout/AlignArray:
 Layout/AlignHash:
   Enabled: True
 
-Style/LayoutParameters:
+Layout/AlignParameters:
   Enabled: True
 
 Metrics/BlockNesting:
@@ -524,6 +524,9 @@ RSpec/RepeatedDescription:
   Enabled: False
 
 RSpec/NestedGroups:
+  Enabled: False
+
+RSpec/RepeatedExample:
   Enabled: False
 
 # this is broken on ruby1.9
