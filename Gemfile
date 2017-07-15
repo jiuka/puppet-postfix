@@ -14,6 +14,7 @@ group :test do
   gem 'json_pure', '<= 2.0.1', require: false if RUBY_VERSION < '2.0.0'
   gem 'coveralls', require: false if RUBY_VERSION >= '2.0.0'
   gem 'simplecov-console', require: false if RUBY_VERSION >= '2.0.0'
+  gem 'semantic_puppet' if ENV['PUPPET_VERSION'] == '~> 3.0'
 end
 
 group :development do
